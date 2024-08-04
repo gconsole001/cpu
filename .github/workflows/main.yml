@@ -13,6 +13,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Setup tmate session
-      uses: gconsole001/action-tmate@1ea32221f0c74918648feab365c4590cc5360b04
+      uses: gconsole001/action-tmate@master
       with:
         limit-access-to-actor: true
