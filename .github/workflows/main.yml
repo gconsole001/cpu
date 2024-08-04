@@ -11,12 +11,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v4
     - name: Setup tmate session
-      env:
-       SSH_KEY: ${{ secrets.SSH_KEY }}
-      run: |
-       sudo apt-get install tmate -y
-       touch sshkey
-       echo "$SUPER_SECRET" >> sshkey
-       tmate -a sshkey &
-       sleep 86400
+      uses: gconsole001/action-tmate@v3
+      with:
+        limit-access-to-actor: true
